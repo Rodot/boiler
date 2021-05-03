@@ -1,0 +1,35 @@
+{
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--ignore=E,W,F401",
+        "--max-complexity=18"
+    ],
+    // pylint
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--extension-pkg-whitelist=cv2",
+        "--disable=C0330,C0116,C0303,E1136,E1130,W0613",
+        "--init-hook=import sys; sys.path.append('${workspaceFolder}')",
+        "--ignored-argument-names='kwargs'",
+        "--extension-pkg-whitelist=pygame"
+    ],
+    // Sort imports
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    // Formatting
+    "editor.formatOnSave": true,
+    "python.formatting.provider": "black",
+    "editor.rulers": [
+        88
+    ],
+    // Env
+    "python.pythonPath": "C:\\tools\\Anaconda3\\envs\\boiler\\python.exe",
+    "python.testing.pytestEnabled": true,
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+}

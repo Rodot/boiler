@@ -1,0 +1,49 @@
+name: Python Continuous Integration
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Cache dependencies
+        uses: actions/cache@v1
+        with:
+          path: ~\AppData\Local\pip\Cache
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements-frozen.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: |
+          pip install wheel --quiet
+          pip install -r requirements-frozen.txt
+
+      - name: Lint with pylint
+        run: |
+          pip install pylint --quiet
+          pylint . --disable=C,R,W1618,W1619,E1130,E1136,W0613 --ignored-argument-names='kwargs'
+
+      - name: Lint with flake8
+        run: |
+          pip install flake8 --quiet
+          flake8 . --count --ignore=E,W,F401 --max-complexity=18 --max-line-length=127 --statistics
+
+      - name: Check format with black
+        run: |
+          pip install black --quiet
+          black . --check
+
+      - name: Check imports with isort
+        run: |
+          pip install isort --quiet
+          isort . --check-only

@@ -1,0 +1,20 @@
+# Contains manually set packages. For the frozen version, see requirements-frozen.txt
+
+# Quality - linters, formatters and testers
+rope
+pytest
+flake8
+pylint
+black
+isort
+pytest
+# Data science
+scipy
+numpy
+pandas
+matplotlib
+seaborn
+# Image processing
+pillow
+pygame
+opencv-contrib-python
