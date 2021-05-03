@@ -11,7 +11,7 @@ choco feature enable -n allowGlobalConfirmation
 Install required softwares using chocolatey
 
 ``` cmd
-choco install anaconda3
+choco install miniconda3
 choco install vscode
 
 choco install git
