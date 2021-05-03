@@ -31,7 +31,7 @@ jobs:
       - name: Lint with pylint
         run: |
           pip install pylint --quiet
-          pylint . --disable=C,R,W1618,W1619,E1130,E1136,W0613 --ignored-argument-names='kwargs'
+          pylint boiler --disable=C,R,W1618,W1619,E1130,E1136,W0613 --ignored-argument-names='kwargs'
 
       - name: Lint with flake8
         run: |
@@ -46,4 +46,4 @@ jobs:
       - name: Check imports with isort
         run: |
           pip install isort --quiet
-          isort . --check-only
+          isort boiler --check --diff
