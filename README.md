@@ -11,7 +11,7 @@ choco feature enable -n allowGlobalConfirmation
 Install required softwares using chocolatey
 
 ``` cmd
-choco install miniconda3
+choco install miniconda3 --params="'/AddToPath:1'"
 choco install vscode
 
 choco install git
