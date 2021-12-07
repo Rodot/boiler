@@ -25,11 +25,10 @@
         88
     ],
     // Env
-    "python.pythonPath": "C:\\tools\\Anaconda3\\envs\\boiler\\python.exe",
+    "python.defaultInterpreterPath": "C:\\tools\\miniconda3\\envs\\boiler\\python.exe",
     "python.testing.pytestEnabled": true,
     "python.testing.pytestArgs": [
         "."
     ],
     "python.testing.unittestEnabled": false,
-    "python.testing.nosetestsEnabled": false,
 }
